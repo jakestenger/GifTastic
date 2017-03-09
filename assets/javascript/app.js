@@ -11,9 +11,16 @@ var topics = [
 	"romulans"
 ];
 
+function buttoner() {
+	$("#button-row").empty();
+	for (var i = 0; i < topics.length; i++) {
+		b = $("<button>");
+		b.addClass("")
+		$("#button-row").append()
+	}
+}
 
 function giphy_search(query, num) {
-	console.log(num);
 	// replace all spaces with plus symbols using regex
 	query = query.replace(/ /g,"+");
 	// combine variables into a single url
@@ -25,7 +32,6 @@ function giphy_search(query, num) {
 	}).done(function(response) {
 		tablePlacement(num, response.data[num].images.fixed_width.url);
 	});
-	return;
 }
 
 function tablePlacement(num, url) {
@@ -33,7 +39,6 @@ function tablePlacement(num, url) {
 	a.attr("src", url);
 	a.addClass("gif");
 	$("#gif-grid").append(a);
-	return;
 }
 
 function animation(state){
@@ -49,7 +54,7 @@ function animation(state){
 
 function getGifs(query, number) {
 	for (var i = 0; i <= number; i++) {
-		return giphy_search(query, i);
+		giphy_search(query, i);
 	};
 }
 
